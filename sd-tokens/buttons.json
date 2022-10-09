@@ -1,0 +1,38 @@
+{
+  "border-radius-14px": {
+    "value": "14px",
+    "type": "borderRadius"
+  },
+  "padding-8px": {
+    "value": "8px",
+    "type": "spacing"
+  },
+  "padding-16px": {
+    "value": "16px",
+    "type": "spacing"
+  },
+  "padding-12px": {
+    "value": "12px",
+    "type": "spacing"
+  },
+  "padding-24px": {
+    "value": "24px",
+    "type": "spacing"
+  },
+  "padding-32px": {
+    "value": "32px",
+    "type": "spacing"
+  },
+  "padding-40px": {
+    "value": "40px",
+    "type": "spacing"
+  },
+  "gap-4px": {
+    "value": "4px",
+    "type": "spacing"
+  },
+  "gap-8px": {
+    "value": "8px",
+    "type": "spacing"
+  }
+}

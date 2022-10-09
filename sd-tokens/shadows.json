@@ -1,0 +1,28 @@
+{
+  "drop_light": {
+    "color": {
+      "value": "#262a4824",
+      "type": "color"
+    },
+    "type": {
+      "value": "dropShadow",
+      "type": "type"
+    },
+    "x": {
+      "value": 4,
+      "type": "x"
+    },
+    "y": {
+      "value": 8,
+      "type": "y"
+    },
+    "blur": {
+      "value": 16,
+      "type": "blur"
+    },
+    "spread": {
+      "value": 0,
+      "type": "spread"
+    }
+  }
+}
