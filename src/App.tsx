@@ -4,7 +4,7 @@ import AppStore from "./Colors/AppStore";
 import { Box } from "./Components/Box";
 import { Text } from "./Components/Text";
 
-import HomePage from "./Pages/HomePage";
+import HomePage from "./Pages/Home/Home";
 
 interface State {
   part: number;
@@ -14,7 +14,6 @@ export default class App extends Component<{}, State> {
   state: State = {
     part: 1,
     selected: "",
-        
   };
 
   goNext = () => {
