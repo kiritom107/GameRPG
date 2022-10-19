@@ -1,0 +1,38 @@
+[
+  {
+    "Person": "om",
+    "Date": ["29", "30"]
+  },
+  {
+    "Person": "grego",
+    "Date": ["29", "30"]
+  },
+  {
+    "Person": "samu",
+    "Date": ["29", "30"]
+  },
+  {
+    "Person": "pedro",
+    "Date": ["29"]
+  },
+  {
+    "Person": "gisu",
+    "Date": ["29"]
+  },
+  {
+    "Person": "begliomini",
+    "Date": ["30"]
+  },
+  {
+    "Person": "gabri",
+    "Date": ["30"]
+  },
+  {
+    "Person": "sesta",
+    "Date": ["30"]
+  },
+  {
+    "Person": "sera",
+    "Date": ["30"]
+  }
+]

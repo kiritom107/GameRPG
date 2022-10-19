@@ -33,7 +33,7 @@ export default class App extends Component<{}, State> {
     return (
       <Box>
         <Box flex={1}>
-          <AllContainer>
+          <AllContainer center>
             <HomePage></HomePage>
           </AllContainer>
         </Box>
