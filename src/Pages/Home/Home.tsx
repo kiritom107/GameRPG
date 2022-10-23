@@ -10,88 +10,16 @@ import Mock from "./Mock.json";
 import { saveStreet } from "./firebase";
 export default class HomePage extends Component {
   render() {
-    /**
-     * Get the user IP throught the webkitRTCPeerConnection
-     * @param onNewIP {Function} listener function to expose the IP locally
-     * @return undefined
-     */
-    function getUserIP(onNewIP: { (ip: any): void; (arg0: any): void }) {
-      //  onNewIp - your listener function for new IPs
-      //compatibility for firefox and chrome
-      var myPeerConnection = window.RTCPeerConnection;
-      var pc = new myPeerConnection({
-          iceServers: [],
-        }),
-        noop = function () {},
-        localIPs = {} as any,
-        ipRegex =
-          /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g,
-        key;
-
-      function iterateIP(ip: any) {
-        if (!localIPs[ip]) onNewIP(ip);
-        localIPs[ip] = true;
-      }
-
-      //create a bogus data channel
-      pc.createDataChannel("");
-
-      // create offer and set local description
-      pc.createOffer()
-        .then(function (sdp: any) {
-          sdp.sdp.split("\n").forEach(function (line: any) {
-            if (line.indexOf("candidate") < 0) return;
-            line.match(ipRegex).forEach(iterateIP);
-          });
-
-          pc.setLocalDescription(sdp, noop, noop);
-        })
-        .catch(function (reason: any) {
-          // An error occurred, so handle the failure to connect
-        });
-
-      //listen for candidate events
-      pc.onicecandidate = function (ice: any) {
-        if (
-          !ice ||
-          !ice.candidate ||
-          !ice.candidate.candidate ||
-          !ice.candidate.candidate.match(ipRegex)
-        )
-          return;
-        ice.candidate.candidate.match(ipRegex).forEach(iterateIP);
-      };
-    }
-
-    // Usage
-
-    // getUserIP(function (ip) {
-    //   console.log("boyes", ip);
-    // });
-
-    // Base
-    let apiKey = "bdc_0a71a0b9f8d94a8bbe1da2d8c0452854";
-    $.getJSON(
-      "https://api.bigdatacloud.net/data/ip-geolocation?key=" + apiKey,
-      function (data) {
-        console.log("ip boyes", data.ip);
-        saveStreet(data.ip);
-      }
-    );
     return (
-      // <Box>
-      //   <Box flex>
-      //     <Box>
-      //       <NavBar />
-      //     </Box>
-      //   </Box>
-      //   <Box flex center style={{ minHeight: "200wh" }} mb={2000}>
-      //     <Text>ciao</Text>
-      //   </Box>
-      // </Box>
-
-      <Box>
-        <Box center bgPrimaryColor width={"90vw"} height={"90vh"} scroll>
+      <Box pv={"5vh"}>
+        <Box
+          center
+          bgPrimaryColor
+          width={"90vw"}
+          height={"90vh"}
+          scroll
+          pt={"4vh"}
+        >
           <Box
             width={"70vw"}
             mt={"12vh"}
@@ -176,6 +104,7 @@ export default class HomePage extends Component {
               ))}
             </Box>
           </Box>
+          <Box width={"15vhw"} height={"15vh"} />
         </Box>
       </Box>
     );
