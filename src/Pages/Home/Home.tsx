@@ -86,7 +86,7 @@ export default class HomePage extends Component {
                   )}
                   {e.Date.includes("30") && (
                     <Box
-                      ml={e.Date.includes("29") ? "5.0vw" : "29vw"}
+                      ml={e.Date.includes("29") ? "5.0vw" : "29.5vw"}
                       style={{
                         border: "1px solid black",
                         backgroundColor: "#41e7aa",
