@@ -17,6 +17,7 @@ export default class AboutUs extends Component {
     sections.forEach((section) => {
       console.log(section);
       const imgBlock = section.querySelector(".rg__image");
+      const img = section.querySelector(".rg__image img");
       const mask = section.querySelector(".rg__image--mask");
       const text = section.querySelector(".rg__text");
       const textHeight = section.querySelector(".rg__text--copy");
@@ -26,6 +27,7 @@ export default class AboutUs extends Component {
       gsap.set(imgBlock, { yPercent: -101 });
       gsap.set(Description, { opacity: 0, yPercent: +20 });
       gsap.set(mask, { yPercent: 100 });
+      gsap.set(img, { scale: 1.5 });
       console.log("primis");
 
       const createHoverReveal = (e: any) => {
@@ -38,15 +40,17 @@ export default class AboutUs extends Component {
 
         if (e.type === "mouseenter") {
           console.log("gg");
-          tl.to(mask, { yPercent: -100 }, 0)
-            .to(imgBlock, { yPercent: 100 }, 0)
+          tl.to(mask, { duration: 0.5, yPercent: -100 }, 0)
+            .to(imgBlock, { duration: 0.5, yPercent: 100 }, 0)
             .to(text, { y: -textHeight!.clientHeight / 2 }, 0)
-            .to(Description, { opacity: 1, yPercent: -10 }, 0);
+            .to(Description, { duration: 1.5, opacity: 1, yPercent: -10 }, 0)
+            .to(img, { duration: 1.1, scale: 1 }, 0);
         } else {
           tl.to(mask, { duration: 0.2, yPercent: 100 }, 0)
             .to(imgBlock, { duration: 0.2, yPercent: -100 }, 0)
             .to(text, { y: 0 }, 0)
-            .to(Description, { opacity: 0, yPercent: +20 }, 0);
+            .to(Description, { opacity: 0, yPercent: +20 }, 0)
+            .to(img, { scale: 1.5 }, 0);
         }
         return tl;
       };
@@ -81,14 +85,14 @@ export default class AboutUs extends Component {
                 <div className="rg__text--copy">
                   <div className="rg__text--mask">
                     <p>
-                      è un universitario dell mahadoona ( a me uni fa skiho).
+                      è un universitario dell mahadoona (a me uni fa skiho).
                     </p>
                   </div>
                 </div>
               </div>
               <div className="rg__image">
                 <div className="rg__image--mask">
-                  <img src="https://media.discordapp.net/attachments/1034554134835253309/1035094842696548432/sonoPoveroE_Umile_None_556f0f28-e286-4af4-b871-a697c620fda6.png?width=640&height=1138" />
+                  <img src="https://media.discordapp.net/attachments/1034554134835253309/1034824489344708698/sonoPoveroE_Umile__full_body_view_of_white_wolf_with_white_wing_3073626d-4144-4d91-8118-1c06f8183240.png?width=1138&height=1138 " />
                 </div>
               </div>
             </div>
@@ -127,7 +131,7 @@ export default class AboutUs extends Component {
                   <div className="rg__text--mask">
                     <p>
                       è un programmatore convertito nel lato oscuro ha orgini
-                      molto oscusa per il fatto che è uscito da una scuola
+                      molto oscure per il fatto che è uscito da una scuola
                       classica quindi alla fine fa il scrittore
                     </p>
                   </div>

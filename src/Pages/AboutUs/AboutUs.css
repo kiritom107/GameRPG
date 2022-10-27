@@ -91,6 +91,15 @@ font-weight: 700;
     max-width: 1000vw;
 }
 
+.rg__text p {
+    font-size: 1.2vw;
+    font-size: 16px;
+mix-blend-mode: exclusion;
+    color: white;
+    font-weight: 700;
+
+    max-width: 1000vw;
+}
 .rg__text--heading h3,
 .rg__text--heading span,
 .chapter {
