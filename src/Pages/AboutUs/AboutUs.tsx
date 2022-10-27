@@ -65,6 +65,8 @@ export default class AboutUs extends Component<{}, State> {
             .to(text, { y: 0 }, 0)
             .to(img, { scale: 1.5 }, 0);
           text.to(Description, { opacity: 0, yPercent: 30 }, 0);
+        }
+
         return tl;
       };
 
