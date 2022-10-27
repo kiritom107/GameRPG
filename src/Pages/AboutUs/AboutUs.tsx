@@ -8,13 +8,19 @@ import { Box } from "../../Components/Box";
 import { Text } from "../../Components/Text";
 import { img } from "../../Components/Icons";
 
-export default class AboutUs extends Component {
+interface State {
+  AcctualIndex: number;
+}
+export default class AboutUs extends Component<{}, State> {
+  state: State = {
+    AcctualIndex: -1,
+  };
+
   imgHover = () => {
-    console.log("n");
     gsap.registerPlugin(ScrollTrigger);
     const sections = document.querySelectorAll(".rg__column");
-
-    sections.forEach((section) => {
+    let indexB = -1;
+    sections.forEach((section, index) => {
       console.log(section);
       const imgBlock = section.querySelector(".rg__image");
       const img = section.querySelector(".rg__image img");
@@ -25,7 +31,7 @@ export default class AboutUs extends Component {
       const Description = section.querySelector(".rg__text--mask");
 
       gsap.set(imgBlock, { yPercent: -101 });
-      gsap.set(Description, { opacity: 0, yPercent: +20 });
+      gsap.set(Description, { opacity: 0, yPercent: 30 });
       gsap.set(mask, { yPercent: 100 });
       gsap.set(img, { scale: 1.5 });
       console.log("primis");
@@ -37,21 +43,28 @@ export default class AboutUs extends Component {
             ease: "power4.out",
           },
         });
+        const text = gsap.timeline({
+          defaults: {
+            duration: 0.7,
+            ease: "power4.out",
+          },
+        });
 
         if (e.type === "mouseenter") {
           console.log("gg");
-          tl.to(mask, { duration: 0.5, yPercent: -100 }, 0)
-            .to(imgBlock, { duration: 0.5, yPercent: 100 }, 0)
+          indexB = index;
+          tl.to(mask, { yPercent: -100 }, 0)
+            .to(imgBlock, { yPercent: 100 }, 0)
             .to(text, { y: -textHeight!.clientHeight / 2 }, 0)
-            .to(Description, { duration: 1.5, opacity: 1, yPercent: -10 }, 0)
             .to(img, { duration: 1.1, scale: 1 }, 0);
+
+          text.to(Description, { opacity: 1, yPercent: -10 }, 0);
         } else {
-          tl.to(mask, { duration: 0.2, yPercent: 100 }, 0)
-            .to(imgBlock, { duration: 0.2, yPercent: -100 }, 0)
+          tl.to(mask, { yPercent: 100 }, 0)
+            .to(imgBlock, { yPercent: -100 }, 0)
             .to(text, { y: 0 }, 0)
-            .to(Description, { opacity: 0, yPercent: +20 }, 0)
             .to(img, { scale: 1.5 }, 0);
-        }
+          text.to(Description, { opacity: 0, yPercent: 30 }, 0);
         return tl;
       };
 

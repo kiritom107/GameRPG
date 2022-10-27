@@ -157,6 +157,7 @@ mix-blend-mode: exclusion;
 .rg__text--mask {
     overflow: hidden;
     max-width: 1000vw;
+    /* opacity: 0; */
 }
 
 .fill-background {
