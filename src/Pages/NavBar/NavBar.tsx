@@ -5,7 +5,12 @@ import { Text } from "../../Components/Text";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import "./NavBar.css";
-export default class NavBar extends Component {
+import { navigate, refresh, reloadApp } from "../../Router";
+
+interface Props {
+  changeRoute: any;
+}
+export default class NavBar extends Component<Props> {
   componentDidMount(): void {
     // -------- -------- NAV BAR NAVIGATION -------- --------
     gsap.registerPlugin(ScrollTrigger);
@@ -64,19 +69,54 @@ export default class NavBar extends Component {
           <nav className="main-nav">
             <ul>
               <li>
-                <a href="#0">Our Values</a>
+                <a
+                  onClick={() => {
+                    navigate("AbautUs");
+                    this.props.changeRoute("AbautUs");
+                  }}
+                >
+                  Our Values
+                </a>
               </li>
               <li>
-                <a href="#0">Portfolio</a>
+                <a
+                  onClick={() => {
+                    navigate("AbautUs");
+                    this.props.changeRoute("AbautUs");
+                  }}
+                >
+                  Portfolio
+                </a>
               </li>
               <li>
-                <a href="#0">Blog</a>
+                <a
+                  onClick={() => {
+                    navigate("AbautUs");
+                    this.props.changeRoute("AbautUs");
+                  }}
+                >
+                  Blog
+                </a>
               </li>
               <li>
-                <a href="#0">How We Work</a>
+                <a
+                  onClick={() => {
+                    navigate("AbautUs");
+                    this.props.changeRoute("AbautUs");
+                  }}
+                >
+                  How We Work
+                </a>
               </li>
               <li>
-                <a href="#0">Contact</a>
+                <a
+                  onClick={() => {
+                    navigate("Home");
+                    this.props.changeRoute("home");
+                  }}
+                >
+                  Contact
+                </a>
               </li>
             </ul>
             <div className="burger">

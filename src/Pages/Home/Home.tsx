@@ -9,6 +9,7 @@ import "./HomeCss.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Title from "antd/lib/skeleton/Title";
+import { navigate } from "../../Router";
 
 export default class HomePage extends Component {
   ScrollAnimation = () => {
