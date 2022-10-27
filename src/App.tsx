@@ -5,6 +5,7 @@ import { Box } from "./Components/Box";
 import { Text } from "./Components/Text";
 
 import HomePage from "./Pages/Home/Home";
+import NavBar from "./Pages/NavBar/NavBar";
 
 interface State {
   part: number;
@@ -33,7 +34,8 @@ export default class App extends Component<{}, State> {
     return (
       <Box>
         <Box flex={1}>
-          <AllContainer center>
+          <AllContainer>
+            <NavBar />
             <HomePage></HomePage>
           </AllContainer>
         </Box>
@@ -48,6 +50,6 @@ const AllContainer = styled(Box)`
    */
 
   background-color: ${() => AppStore.theme.Texts.primaryColor};
-  min-height: 100vh;
+  /* min-height: 100vh; */
   z-index: 9999px;
 `;
