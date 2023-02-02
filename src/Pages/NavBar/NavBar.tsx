@@ -61,7 +61,7 @@ export default class NavBar extends Component<Props> {
       <Box mt={24} row vcenter>
         <Box style={{ position: "relative" }}>
           <Box flex style={{ alignItems: "flex-start" }} id={"logo__text"}>
-            <Text>AI G.O.D.S Studio</Text>
+            <Text>AI G.O.D.S Studio bello</Text>
           </Box>
         </Box>
 
