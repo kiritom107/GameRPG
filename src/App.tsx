@@ -53,6 +53,7 @@ export default class App extends Component<{}, State> {
                   <></>
                 </Route>
               </Routes> */}
+            {/* @todo- dario sistema home page */}
             {this.state.step === "home" && <HomePage />}
             {this.state.step === "AbautUs" && <AboutUs />}
           </AllContainer>
