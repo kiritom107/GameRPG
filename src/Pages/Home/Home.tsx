@@ -76,7 +76,7 @@ export default class HomePage extends Component {
         <h1>
           <span id={"MainTitle"}>AI G.O.D.S</span>
           <span>Introducing </span>
-          <span>KindomFour </span>
+          <span>Run Run Dream </span>
         </h1>
         <p className="subtitle">
           Top Old fashion <br />
