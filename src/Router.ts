@@ -38,12 +38,14 @@ export function navigate(
   options?: NavigationOptions
 ): boolean {
   // add query params to path
+    
   const route = routeParams
     ? replaceMatchParams(_path as string, routeParams)
     : _path;
   const stringParams = routeParams
     ? stringify(routeParams, { arrayFormat: "repeat" })
     : "";
+    
   const path = `${route}${stringParams ? `?${stringParams}` : ""}`;
   const props = options ? options.props : undefined;
 

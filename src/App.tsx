@@ -9,6 +9,7 @@ import { Navigate } from "react-router-dom";
 import HomePage from "./Pages/Home/Home";
 import NavBar from "./Pages/NavBar/NavBar";
 import AboutUs from "./Pages/AboutUs/AboutUs";
+import CanvaThree from "./Components/CanvaThree";
 
 interface State {
   part: number;
@@ -20,7 +21,7 @@ export default class App extends Component<{}, State> {
   state: State = {
     part: 1,
     selected: "",
-    step: "home",
+    step: "TheeCanvas",
   };
 
   goNext = () => {
@@ -37,8 +38,6 @@ export default class App extends Component<{}, State> {
   };
 
   render() {
-    console.log(this.state);
-    console.log("condition", this.state.step === "AbautUs");
     return (
       // <BrowserRouter>
       <Box>
@@ -56,6 +55,7 @@ export default class App extends Component<{}, State> {
             {/* @todo- dario sistema home page */}
             {this.state.step === "home" && <HomePage />}
             {this.state.step === "AbautUs" && <AboutUs />}
+            {this.state.step === "TheeCanvas" && <CanvaThree />}
           </AllContainer>
         </Box>
       </Box>
